@@ -39,7 +39,8 @@ def display_chart1(relayoutData):
             dtick=1,
         ),
         showlegend=False,
-        font=dict(family='Courier New', size=14, color='black')
+        font=dict(family='Courier New', size=14, color='black'),
+        height=800
     )
     return fig1
 
