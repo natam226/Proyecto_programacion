@@ -68,7 +68,7 @@ def display_chart2(relayoutData):
     [Input('chart3', 'relayoutData')]
 )
 def display_chart3(relayoutData):
-    zaga_sin_negados = zaga[zaga['ESTADO'] != 'Negado']
+    zaga_sin_negados = zaga[~zaga['ESTADO'].isin(['Negado', 'Desistio'])]
     rendimiento_asesores = zaga_sin_negados.groupby('ASESOR')['MONTO '].sum()
     rendimiento_asesores_sorted = rendimiento_asesores.sort_values()
     fig3 = go.Figure(data=[go.Bar(x=rendimiento_asesores_sorted.index, y=rendimiento_asesores_sorted.values, marker_color='plum')])
@@ -82,6 +82,7 @@ def display_chart3(relayoutData):
         font=dict(family='Courier New', size=14, color='black')
     )
     return fig3
+
 
 @app.callback(
     Output(component_id='chart4', component_property='figure'),
