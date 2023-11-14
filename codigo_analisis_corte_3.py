@@ -18,6 +18,7 @@ app.layout = html.Div(children=[
     dcc.Graph(id='chart2'),
     dcc.Graph(id='chart3'),
     dcc.Graph(id='chart4'),
+    dcc.Graph(id='chart5')
       ])
 ])
 @app.callback(
@@ -83,12 +84,22 @@ def display_chart3(relayoutData):
     )
     return fig3
 
-
 @app.callback(
-    Output(component_id='chart4', component_property='figure'),
-    [Input('chart4', 'relayoutData')]
+        Output(component_id='chart4', component_property='figure'),
+        [Input('chart4', 'relayoutData')]
 )
 def display_chart4(relayoutData):
+    scatter_graph = px.scatter(zaga, x='MONTO ', y='ESTADO', title='Relación entre el monto y el estado')
+    scatter_graph.update_layout(title_font=dict(family='Courier New', size=16, color='black'))
+
+    return scatter_graph
+
+
+@app.callback(
+    Output(component_id='chart5', component_property='figure'),
+    [Input('chart5', 'relayoutData')]
+)
+def display_chart5(relayoutData):
     df_pie = zaga['ESTADO'].value_counts().nlargest(20).reset_index()
     df_pie.columns = ['Estado', 'Count']
     
