@@ -89,8 +89,8 @@ def display_chart3(relayoutData):
         [Input('chart4', 'relayoutData')]
 )
 def display_chart4(relayoutData):
-    scatter_graph = px.scatter(zaga, x='MONTO ', y='ESTADO', title='Relación entre el monto y el estado')
-    scatter_graph.update_layout(title_font=dict(family='Courier New', size=16, color='black'))
+    scatter_graph = px.scatter(zaga, x='MONTO ', y='ESTADO', title='Relación entre el monto y el estado', color='ESTADO', color_continuous_scale='Burg')
+    scatter_graph.update_layout(title_font=dict(family='Courier New', size=16, color='black'), font=dict(family='Courier New', size=14, color='black'))
 
     return scatter_graph
 
@@ -117,7 +117,6 @@ def display_chart5(relayoutData):
         title_font=dict(family='Courier New', size=16, color='black'),
         
     )
-    
    
     return pie_chart_fig
 
