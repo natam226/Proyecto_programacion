@@ -18,7 +18,8 @@ def mostrar_imagenes():
     imagenes = [cargar_imagen("C:/Users/natal/OneDrive/Escritorio/Gráfica rendimiento de los asesores.png"),
                 cargar_imagen("C:/Users/natal/OneDrive/Escritorio/Gráfica rendimiento del convenio.png"),
                 cargar_imagen("C:/Users/natal/OneDrive/Escritorio/Gráfica rendimiento asesores por monto prestado.png"),
-                cargar_imagen("C:/Users/natal/OneDrive/Escritorio/Gráfica estado de los creditos.png")
+                cargar_imagen("C:/Users/natal/Downloads/Relacion entre monto y el estado.png"),
+                cargar_imagen("C:/Users/natal/OneDrive/Escritorio/Gráfica estado de los creditos.png"),
                 ]
 
     for imagen_tk in imagenes:
